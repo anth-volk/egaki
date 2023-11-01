@@ -1,0 +1,23 @@
+[project]
+name = "Egaki"
+version = "0.0.0"
+authors = [
+  { name="Anthony Volk", email="anth.volk@gmail.com"}
+]
+description = "A programming language with a syntax entirely in emoji, interpreted to Python at runtime"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Development Status :: 1 - Planning",
+  "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+"Homepage" = "https://www.github.com/anth-volk/egaki"
+"Bug Tracker" = "https://www.github.com/anth-volk/egaki/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
