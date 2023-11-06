@@ -1,7 +1,10 @@
-from src.blocks.block import BlockInterface, BlockTokenItem
-from src.types.ji import JiString
+from blocks.block import BlockInterface, BlockTokenItem
+from type_files.ji import JiString
 
+#################################################
 # Numbers Block
+#################################################
+
 numbers_block_indicator = JiString("🔢")
 numbers_block_roles = {
   "digit": "DIGIT"
@@ -59,10 +62,18 @@ numbers_block_tokens: list[BlockTokenItem] = [
   },
 ]
 
-NUMBERS_BLOCK = BlockInterface(
+NumbersBlock = BlockInterface(
   numbers_block_indicator,
   numbers_block_tokens
 )
+
+#################################################
+# Default Blocks Export
+#################################################
+
+DefaultBlocks = [
+  NumbersBlock
+]
 
 
   
