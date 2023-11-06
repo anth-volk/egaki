@@ -1,5 +1,5 @@
-from src.blocks.block import BlockInterface, BlockTokenItem
-from src.types.ji import JiString
+from blocks.block import BlockInterface, BlockTokenItem
+from type_files.ji import JiString
 
 #################################################
 # Numbers Block

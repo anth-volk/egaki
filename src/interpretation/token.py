@@ -1,4 +1,4 @@
-from src.types.ji import JiString
+from src.type_files.ji import JiString
 
 class Token:
   def __init__(self, text, role):

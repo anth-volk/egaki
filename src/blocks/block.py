@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from src.types import JiString
+from type_files.ji import JiString
 
 class BlockTokenItem(TypedDict):
   """

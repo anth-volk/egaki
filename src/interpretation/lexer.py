@@ -1,5 +1,5 @@
-from src.types import JiString
-from src.blocks import DefaultBlocks
+from type_files.ji import JiString
+from blocks.default_blocks import DefaultBlocks
 
 class Lexer:
   def __init__(self):

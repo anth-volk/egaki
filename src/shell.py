@@ -1,4 +1,4 @@
-from src.interpretation import Lexer
+from interpretation.lexer import Lexer
 
 while True:
 
