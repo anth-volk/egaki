@@ -1,7 +1,10 @@
+from src.interpretation import Lexer
+
 while True:
 
-  text = input("💰 ")
-  if (text == "🛑"):
+  lexer = Lexer()
+  input_line = input("💰 ")
+  if (input_line == "🛑"):
     break
   else:
-    print(text)
+    print(lexer.lex(input_line))

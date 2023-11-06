@@ -1,0 +1,1 @@
+from .ji import JiString
