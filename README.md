@@ -9,7 +9,7 @@ The impetus for this project is a desire to strengthen my understanding of Pytho
 While practicing code on my phone while commuting, I found it annoying to continuously be forced to switch between the standard keyboard, symbols selector, advanced symbols pane, and formatting tools, and wondered if emoji, if formatted correctly in a purpose-built mobile terminal emulator, could provide a mobile-first development experience. While this project will not be building said mobile terminal application, it will attempt to simulate the experience. 
 
 ## Follow Along!
-While building this project, I'll be writing more in-depth about the experience, the project's design choices, and what this language might actually look like on mobile. A link to this writing will be provided here after the first post is published.
+While building this project, I'll be writing more in-depth about the experience, the project's design choices, and what this language might actually look like on mobile. The first post in the series is available [here](https://medium.com/@anth-volk/building-an-emoji-programming-language-why-and-how-31c80167b264).
 
 ## Roadmap
 _Note: This roadmap will evolve as the project grows_
