@@ -46,7 +46,7 @@ class JiString:
   def _deserialize(self, input: str):
     # Check to make sure that the entire string is jis
     if not emoji.purely_emoji(input):
-      raise InvalidJiStringError("JiString initializer input not entirely composed of jis")
+      raise InvalidJiStringError("JiString must be initialized with string of valid jis")
     else:
       # Demojize the string (can't iterate over string of jis,
       # as they can be multiple chars in length)
