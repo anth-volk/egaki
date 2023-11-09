@@ -18,6 +18,9 @@ classifiers = [
 "Homepage" = "https://www.github.com/anth-volk/egaki"
 "Bug Tracker" = "https://www.github.com/anth-volk/egaki/issues"
 
+[project.scripts]
+cli-name = "egaki.shell:shell"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
