@@ -1,5 +1,5 @@
-from type_files.ji import JiString
-from blocks.default_blocks import DefaultBlocks
+from egaki.type_files.ji import JiString
+from egaki.blocks.default_blocks import DefaultBlocks
 
 class Lexer:
   def __init__(self):

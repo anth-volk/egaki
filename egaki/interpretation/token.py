@@ -1,4 +1,4 @@
-from src.type_files.ji import JiString
+from egaki.type_files.ji import JiString
 
 class Token:
   def __init__(self, text, role):
