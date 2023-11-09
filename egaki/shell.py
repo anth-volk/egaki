@@ -1,4 +1,4 @@
-from interpretation.lexer import Lexer
+from egaki.interpretation.lexer import Lexer
 
 while True:
 

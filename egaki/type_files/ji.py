@@ -1,6 +1,6 @@
 import emoji
 import re
-from errors.errors import InvalidJiError, InvalidJiStringError
+from egaki.errors.errors import InvalidJiError, InvalidJiStringError
 
 class Ji:
   """

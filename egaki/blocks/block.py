@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from type_files.ji import JiString
+from egaki.type_files.ji import JiString
 
 class BlockTokenItem(TypedDict):
   """

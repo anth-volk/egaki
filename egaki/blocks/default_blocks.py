@@ -1,5 +1,5 @@
-from blocks.block import BlockInterface, BlockTokenItem
-from type_files.ji import JiString
+from egaki.blocks.block import BlockInterface, BlockTokenItem
+from egaki.type_files.ji import JiString
 
 #################################################
 # Numbers Block
