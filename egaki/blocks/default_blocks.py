@@ -12,52 +12,52 @@ numbers_block_roles = {
 numbers_block_tokens: list[BlockTokenItem] = [
   {
     "name": "zero",
-    "ji": "0️⃣",
+    "ji": ":keycap_0:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "one",
-    "ji": "1️⃣",
+    "ji": ":keycap_1:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "two",
-    "ji": "2️⃣",
+    "ji": ":keycap_2:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "three",
-    "ji": "3️⃣",
+    "ji": ":keycap_3:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "four",
-    "ji": "4️⃣",
+    "ji": ":keycap_4:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "five",
-    "ji": "5️⃣",
+    "ji": ":keycap_5:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "six",
-    "ji": "6️⃣",
+    "ji": ":keycap_6:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "seven",
-    "ji": "7️⃣",
+    "ji": ":keycap_7:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "eight",
-    "ji": "8️⃣",
+    "ji": ":keycap_8:",
     "role": numbers_block_roles["digit"]
   },
   {
     "name": "nine",
-    "ji": "9️⃣",
+    "ji": ":keycap_9:",
     "role": numbers_block_roles["digit"]
   },
 ]
@@ -74,6 +74,3 @@ NumbersBlock = BlockInterface(
 DefaultBlocks = [
   NumbersBlock
 ]
-
-
-  
