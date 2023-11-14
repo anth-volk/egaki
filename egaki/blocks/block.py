@@ -2,8 +2,6 @@ from typing import TypedDict
 
 from egaki.type_files.ji import JiString
 
-class 
-
 class BlockJiInterface(TypedDict):
   """
   Interface for dicts that each functional code
