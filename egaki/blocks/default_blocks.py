@@ -1,15 +1,32 @@
-from egaki.blocks.block import Block, BlockJiInterface
+from egaki.blocks.block import Block, BlockJiInterface, BlockRoleInterface
 from egaki.type_files.ji import JiString
 
 #################################################
 # Numbers Block
 #################################################
 
-numbers_block_indicator = JiString("🔢")
-numbers_block_roles = {
-  "digit": "DIGIT"
-}
+#### Roles ############
+def number_role_formula(input: JiString) -> tuple(JiString, JiString):
 
+  # Instantiate empty JiString for output
+
+  # While there is a next ji and it's a number type:
+
+    # Raise error if attempting to add second decimal
+
+    # Push next value into output
+
+  # Return input minus lexed token and the token itself
+
+
+
+  # Raise error if attempting to 
+
+
+#### Other ############
+numbers_block_indicator = JiString("🔢")
+
+#### Jis ##############
 numbers_block_jis: list[BlockJiInterface] = [
   {
     "name": "zero",
@@ -63,6 +80,7 @@ numbers_block_jis: list[BlockJiInterface] = [
   },
 ]
 
+#### Instantiator #####
 NumbersBlock = Block(
   numbers_block_indicator,
   numbers_block_jis
