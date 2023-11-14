@@ -2,7 +2,9 @@ from typing import TypedDict
 
 from egaki.type_files.ji import JiString
 
-class BlockTokenItem(TypedDict):
+class 
+
+class BlockJiInterface(TypedDict):
   """
   Interface for dicts that each functional code
   block will implement
@@ -11,13 +13,12 @@ class BlockTokenItem(TypedDict):
   ji: str
   role: str
 
-class BlockInterface:
+class Block:
   """
-  Defines the interface used to 
-  instantiate each functional code block
+  Instantiates a functional code block
   """
-  def __init__(self, indicator_ji: JiString, tokens: list[BlockTokenItem]):
-    self.tokens = tokens
+  def __init__(self, indicator_ji: JiString, jis: list[BlockJiInterface]):
+    self.jis = jis
     self.indicator_ji = indicator_ji
 
   # indicator ji

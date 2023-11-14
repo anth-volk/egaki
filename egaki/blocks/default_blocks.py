@@ -1,4 +1,4 @@
-from egaki.blocks.block import BlockInterface, BlockTokenItem
+from egaki.blocks.block import Block, BlockJiInterface
 from egaki.type_files.ji import JiString
 
 #################################################
@@ -10,7 +10,7 @@ numbers_block_roles = {
   "digit": "DIGIT"
 }
 
-numbers_block_tokens: list[BlockTokenItem] = [
+numbers_block_jis: list[BlockJiInterface] = [
   {
     "name": "zero",
     "ji": ":keycap_0:",
@@ -63,9 +63,9 @@ numbers_block_tokens: list[BlockTokenItem] = [
   },
 ]
 
-NumbersBlock = BlockInterface(
+NumbersBlock = Block(
   numbers_block_indicator,
-  numbers_block_tokens
+  numbers_block_jis
 )
 
 #################################################
