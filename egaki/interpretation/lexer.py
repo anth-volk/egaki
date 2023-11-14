@@ -12,9 +12,9 @@ class Lexer:
     lexable_jis: dict[str, str] = {}
 
     for block in DefaultBlocks:
-      tokens = block.tokens
-      for token in tokens:
-        lexable_jis.update({token["ji"]: token["role"]})
+      jis = block.jis
+      for ji in jis:
+        lexable_jis.update({ji["ji"]: ji["role"]})
 
     return lexable_jis
   
@@ -28,16 +28,18 @@ class Lexer:
     # Create an iterable list of all possible tokens
     possible_tokens: list[str] = self.lexable_jis.keys()
 
-    # For each ji in the input
-    for ji in typed_input:
-      # If the ji isn't recognized, raise error
-      if ji.code not in possible_tokens:
-        raise SyntaxError(f"'{ji.code}' not a valid token")
+    # TODO: Edit below to allow for ji type formulas
 
-      # Create a new token that contains the Ji and its function
-      cur_token = Token(ji, self.lexable_jis[ji.code])
+    # # For each ji in the input
+    # for ji in typed_input:
+    #   # If the ji isn't recognized, raise error
+    #   if ji.code not in possible_tokens:
+    #     raise SyntaxError(f"'{ji.code}' not a valid token")
 
-      # Append that to the tokens list
-      tokens.append(cur_token)
+    #   # Create a new token that contains the Ji and its function
+    #   cur_token = Token(ji, self.lexable_jis[ji.code])
 
-    return tokens
+    #   # Append that to the tokens list
+    #   tokens.append(cur_token)
+
+    # return tokens

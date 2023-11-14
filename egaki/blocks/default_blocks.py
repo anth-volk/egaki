@@ -6,18 +6,38 @@ from egaki.type_files.ji import JiString
 #################################################
 
 #### Roles ############
-def number_role_formula(input: JiString) -> tuple(JiString, JiString):
+def number_role_formula(to_parse: JiString, lexable_jis: dict[str, str]) -> tuple(JiString, JiString):
 
-  # Instantiate empty JiString for output
+  ROLE_NAME = "number"
+  DECIMAL_CODE = ":record_button:"
 
-  # While there is a next ji and it's a number type:
+  # Instantiate empty JiString for output and decimal counter
+  output = JiString()
+  decimal_counter: int = 0
+
+  # While the first ji is of number type:
+  cur_ji = to_parse.jis[0]
+  while lexable_jis[cur_ji.code]["name"] == ROLE_NAME:
+
+    # Increment decimal_counter if current ji is decimal
+    if cur_ji.code == DECIMAL_CODE:
+      decimal_counter += 1
 
     # Raise error if attempting to add second decimal
+    if decimal_counter > 1:
+      raise ValueError("Improper number type: two or more decimals utilized")
 
     # Push next value into output
+    output.jis.append(cur_ji)
 
-  # Return input minus lexed token and the token itself
+    # Shift first ji from to_parse
+    to_parse.jis.pop(0)
 
+    # Reassign cur_ji
+    cur_ji = to_parse.jis[0]
+
+  # Return input (minus lexed token) and the token itself
+  return to_parse, output
 
 #### Other ############
 numbers_block_indicator = JiString("🔢")
