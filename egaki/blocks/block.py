@@ -2,6 +2,14 @@ from typing import TypedDict
 
 from egaki.type_files.ji import JiString
 
+class BlockRoleInterface(TypedDict):
+  """
+  Interface for defining block roles, to be utilized
+  inside of block jis
+  """
+  name: str
+  formula: function
+
 class BlockJiInterface(TypedDict):
   """
   Interface for dicts that each functional code
@@ -9,7 +17,7 @@ class BlockJiInterface(TypedDict):
   """
   name: str
   ji: str
-  role: str
+  role: BlockRoleInterface
 
 class Block:
   """
