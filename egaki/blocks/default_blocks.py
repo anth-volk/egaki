@@ -9,6 +9,7 @@ numbers_block_indicator = JiString("🔢")
 numbers_block_roles = {
   "digit": "DIGIT"
 }
+
 numbers_block_tokens: list[BlockTokenItem] = [
   {
     "name": "zero",
