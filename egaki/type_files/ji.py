@@ -13,6 +13,9 @@ class Ji:
     else:
       self.code = code
 
+  def __repr__(self):
+    return f"'{self.code}'"
+
   def _is_valid_ji_code(self, code: str):
     """
     Determine if a code is a valid ji by emojizing, then checking
@@ -29,6 +32,13 @@ class JiString:
   """
   def __init__(self, input: str):
     self.jis: list[Ji] = self._create_jis(input)
+  
+  def __repr__(self):
+    ji_codes: list[str] = []
+    for ji in self.jis:
+      ji_codes.append(ji.code)
+
+    return ji_codes
 
   def _create_jis(self, input: str) -> list[Ji]:
     # First, deserialize the input into an array of 
