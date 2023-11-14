@@ -10,4 +10,3 @@ class Token:
       return f"'{self.ji.code}': {self.role}"
     else:
       return f"'{self.ji.code}': role null"
-

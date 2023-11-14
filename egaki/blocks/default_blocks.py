@@ -19,10 +19,6 @@ def number_role_formula(input: JiString) -> tuple(JiString, JiString):
   # Return input minus lexed token and the token itself
 
 
-
-  # Raise error if attempting to 
-
-
 #### Other ############
 numbers_block_indicator = JiString("🔢")
 

@@ -1,5 +1,5 @@
 from egaki.type_files.ji import JiString
-from egaki.type_files.token import Token
+from egaki.interpretation.token import Token
 from egaki.blocks.default_blocks import DefaultBlocks
 
 class Lexer:
