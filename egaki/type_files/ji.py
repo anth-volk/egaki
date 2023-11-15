@@ -50,7 +50,7 @@ class JiString:
     append: Appends a Ji to the JiString
   """
   def __init__(self, input: Optional[str] = None):
-    self.jis: Union[list[Ji], None] = self._create_jis(input)
+    self.jis: list[Ji] = self._create_jis(input)
   
   def __repr__(self):
     ji_codes: list[str] = []
@@ -67,10 +67,10 @@ class JiString:
     assert type(self.jis) == list
     self.jis.append(item)
 
-  def _create_jis(self, input: Optional[str]) -> Union[list[Ji], None]:
+  def _create_jis(self, input: Optional[str]) -> list[Ji]:
     # If input is None, return an empty list
     if (input == None):
-      return []
+      return list()
     
     # First, deserialize the input into an array of 
     # emoji codes

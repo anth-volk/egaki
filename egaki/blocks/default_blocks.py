@@ -6,7 +6,7 @@ from egaki.type_files.ji import JiString
 #################################################
 
 #### Roles ############
-def number_role_formula(to_parse: JiString, lexable_jis: dict[str, str]) -> tuple(JiString, JiString):
+def number_role_formula(to_parse: JiString, lexable_jis: dict[str, str]) -> tuple[JiString, JiString]:
 
   ROLE_NAME = "number"
   DECIMAL_CODE = ":record_button:"
