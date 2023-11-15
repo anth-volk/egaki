@@ -5,11 +5,3 @@ class InvalidJiError(Exception):
   """
   def __init__(self, message):
     super().__init__(message)
-
-class InvalidJiStringError(Exception):
-  """
-  Error message indicating that a ji string contains
-  non-ji characters
-  """
-  def __init__(self, message):
-    super().__init__(message)
