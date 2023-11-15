@@ -1,5 +1,6 @@
 from egaki.type_files.ji import JiString
 from egaki.interpretation.token import Token
+from egaki.blocks.block import BlockRoleInterface
 from egaki.blocks.default_blocks import DefaultBlocks
 
 class Lexer:
@@ -9,7 +10,7 @@ class Lexer:
   
   def _construct_lexable_jis(self):
 
-    lexable_jis: dict[str, str] = {}
+    lexable_jis: dict[str, BlockRoleInterface] = {}
 
     for block in DefaultBlocks:
       jis = block.jis

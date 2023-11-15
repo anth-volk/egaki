@@ -6,7 +6,7 @@ from egaki.type_files.ji import JiString
 #################################################
 
 #### Roles ############
-def number_role_formula(to_parse: JiString, lexable_jis: dict[str, str]) -> tuple[JiString, JiString]:
+def number_role_formula(to_parse: JiString, lexable_jis: dict[str, BlockRoleInterface]) -> tuple[JiString, JiString]:
 
   ROLE_NAME = "number"
   DECIMAL_CODE = ":record_button:"
@@ -39,6 +39,11 @@ def number_role_formula(to_parse: JiString, lexable_jis: dict[str, str]) -> tupl
   # Return input (minus lexed token) and the token itself
   return to_parse, output
 
+number_role: BlockRoleInterface = {
+  "name": "number",
+  "formula": number_role_formula
+}
+
 #### Other ############
 numbers_block_indicator = JiString("🔢")
 
@@ -47,52 +52,52 @@ numbers_block_jis: list[BlockJiInterface] = [
   {
     "name": "zero",
     "ji": ":keycap_0:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "one",
     "ji": ":keycap_1:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "two",
     "ji": ":keycap_2:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "three",
     "ji": ":keycap_3:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "four",
     "ji": ":keycap_4:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "five",
     "ji": ":keycap_5:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "six",
     "ji": ":keycap_6:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "seven",
     "ji": ":keycap_7:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "eight",
     "ji": ":keycap_8:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
   {
     "name": "nine",
     "ji": ":keycap_9:",
-    "role": numbers_block_roles["digit"]
+    "role": number_role
   },
 ]
 
