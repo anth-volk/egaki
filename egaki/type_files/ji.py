@@ -19,7 +19,7 @@ class Ji:
       text = emoji.demojize(text)
     # Otherwise, if passed text, ensure it's a valid shortcode
     elif not self._is_valid_ji_code(text):
-      raise InvalidJiError("Invalid ji")
+      raise InvalidJiError("Invalid ji; please pass one emoji or valid shortcode to Ji constructor")
 
     # If we're this far, store the code
     self.code = text
