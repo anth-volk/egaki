@@ -44,12 +44,12 @@ class JiString:
 
   Args:
     input: A string of emojis (either as emojis, shortcodes,
-    or Ji instances) or None
+    a list of Ji, or a JiString) or None
 
   Methods:
     append: Appends a Ji to the JiString
   """
-  def __init__(self, input: Optional[str] = None):
+  def __init__(self, input: Optional[Union[str, list[Ji]]] = None):
     self.jis: list[Ji] = self._create_jis(input)
   
   def __repr__(self):
@@ -67,15 +67,23 @@ class JiString:
     assert type(self.jis) == list
     self.jis.append(item)
 
-  def _create_jis(self, input: Optional[str]) -> list[Ji]:
+  def _create_jis(self, input: Optional[Union[str, list[Ji]]]) -> list[Ji]:
     # If input is None, return an empty list
     if (input == None):
       return list()
+    
+    # If input is a list of Ji, return this list
+    if (
+      isinstance(input, list) and
+      all(isinstance(item, Ji) for item in input)
+    ):
+        return input
     
     # First, deserialize the input into an array of 
     # emoji codes
     # The below line included for mypy type checking
     assert input is not None
+    assert not isinstance(input, list) and not all(isinstance(item, Ji) for item in input)
     deserialized: list[str] = self._deserialize(input)
 
     # Then, convert this array into an array of jis
