@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, Callable
 
 from egaki.type_files.ji import JiString
 
@@ -8,7 +8,7 @@ class BlockRoleInterface(TypedDict):
   inside of block jis
   """
   name: str
-  formula: function
+  formula: Callable
 
 class BlockJiInterface(TypedDict):
   """
