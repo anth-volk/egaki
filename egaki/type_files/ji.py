@@ -53,9 +53,9 @@ class JiString:
     self.jis: list[Ji] = self._create_jis(input)
   
   def __repr__(self):
-    ji_codes: list[str] = []
+    ji_codes: str = ""
     for ji in self.jis:
-      ji_codes.append(ji.code)
+      ji_codes = ji_codes + f"{ji.code} "
 
     return ji_codes
   

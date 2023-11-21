@@ -7,6 +7,18 @@ from egaki.type_files.ji import JiString
 
 #### Roles ############
 def number_role_formula(to_parse: JiString, lexable_jis: dict[str, BlockRoleInterface]) -> tuple[JiString, JiString]:
+  """
+  Formula for the 'number' role that takes a string to parse and a dict of 
+  lexable jis as args, returning the remaining to parse and a parsed token.
+  Note that this function mutates the JiString it parses
+  Args
+    to_parse: JiString meant to be parsed
+    lexable_jis: dict of lexable Ji items
+  
+  Returns
+    JiString representing remaining items to parse
+    JiString representing a lexed token
+  """
 
   ROLE_NAME = "number"
   DECIMAL_CODE = ":record_button:"
@@ -16,8 +28,12 @@ def number_role_formula(to_parse: JiString, lexable_jis: dict[str, BlockRoleInte
   decimal_counter: int = 0
 
   # While the first ji is of number type:
-  cur_ji = to_parse.jis[0]
-  while lexable_jis[cur_ji.code]["name"] == ROLE_NAME:
+  while (
+    len(to_parse.jis) > 0 and
+    to_parse.jis[0].code in lexable_jis and
+    lexable_jis[to_parse.jis[0].code]["name"] == ROLE_NAME
+  ):
+    cur_ji = to_parse.jis[0]
 
     # Increment decimal_counter if current ji is decimal
     if cur_ji.code == DECIMAL_CODE:
@@ -34,7 +50,7 @@ def number_role_formula(to_parse: JiString, lexable_jis: dict[str, BlockRoleInte
     to_parse.jis.pop(0)
 
     # Reassign cur_ji
-    cur_ji = to_parse.jis[0]
+    # cur_ji = to_parse.jis[0]
 
   # Return input (minus lexed token) and the token itself
   return to_parse, output
