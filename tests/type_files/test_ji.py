@@ -1,7 +1,7 @@
 import pytest
 from typing import Optional, Union
 
-from egaki.type_files.ji import Ji, JiString
+from egaki.type_files.ji import Ji, JiString, check_jistring_equality
 from egaki.errors.errors import InvalidJiError
 
 class TestJi:
@@ -38,72 +38,39 @@ class TestJi:
 
 class TestJiString:
 
-  def _check_equality(self, test_str: JiString, test_arr: list[Ji]) -> Union[tuple[bool, str], bool]:
-    """
-    Checks if a JiString is equal to a list of the same items, 
-    then returns True if they are or false if not, as well as 
-    an optional error string
-    """
-    
-    # Check that input JiString is of correct type
-    if not isinstance(test_str, JiString):
-      return False, "JiString arg is of incorrect type"
-
-    # Check that both args are of same length
-    if len(test_str.jis) != len(test_arr):
-      return False, "Args are of different lengths"
-    
-    # Check that each item in the JiStrings is the same
-    for i in range(len(test_str.jis)):
-      if test_str.jis[i].code != test_arr[i].code:
-        return False, f"""Ji codes at index {i}:
-        {test_str.jis[i].code}, {test_arr[i].code}"""
-      
-    # If all of the above pass, return true
-    return True
-    
   # Test that, given two emoji, JiString creates list
   # of two Ji
   def test_emoji_creation(self):
     input_string = JiString("😀😀")
-    test_arr = [
+    test_string = JiString([
       Ji(":grinning_face:"),
       Ji(":grinning_face:")
-    ]
-    assert self._check_equality(input_string, test_arr) == True
+    ])
+    assert check_jistring_equality(input_string, test_string) == True
 
   # Test that, given two shortcodes, JiString works
   def test_shortcode_creation(self):
     input_string = JiString(":grinning_face::grinning_face:")
-    test_arr = [
+    test_string = JiString([
       Ji("😀"),
       Ji("😀")
-    ]
-    assert self._check_equality(input_string, test_arr) == True
+    ])
+    assert check_jistring_equality(input_string, test_string) == True
 
   # Test that, given a mix, JiString works
   def test_mixed_creation(self):
     input_string = JiString(":grinning_face:😀")
-    test_arr = [
+    test_string = JiString([
       Ji(":grinning_face:"),
       Ji(":grinning_face:")
-    ]
-    assert self._check_equality(input_string, test_arr) == True
-
-  # Test that, given two Ji, JiString works
-  def test_ji_creation(self):
-    jis = [
-      Ji(":grinning_face:"),
-      Ji(":grinning_face:")
-    ]
-    input_string = JiString(jis)
-    assert self._check_equality(input_string, jis) == True
+    ])
+    assert check_jistring_equality(input_string, test_string) == True
 
   # Test that append() works
   def test_append(self):
     input_string = JiString()
     input_string.append(Ji(":grinning_face:"))
-    test_arr = [
+    test_string = JiString([
       Ji(":grinning_face:")
-    ]
-    assert self._check_equality(input_string, test_arr) == True
+    ])
+    assert check_jistring_equality(input_string, test_string) == True
